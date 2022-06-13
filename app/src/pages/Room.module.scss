@@ -1,0 +1,51 @@
+.root {
+  overflow: hidden;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  color: whitesmoke;
+  background: radial-gradient(transparent, black);
+
+  & header,
+  & footer {
+    text-align: center;
+  }
+
+  & header {
+    font-size: 4rem;
+    font-weight: 900;
+
+    & p {
+      color: rgba(255, 255, 255, 0.705);
+      line-height: 0.85;
+    }
+  }
+
+  & footer {
+    padding-bottom: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  & main {
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(calc(-50% + 1em));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+
+    & img {
+      width: 25%;
+      max-width: 180px;
+      aspect-ratio: 1;
+    }
+  }
+}

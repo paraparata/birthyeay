@@ -1,0 +1,90 @@
+@use "../components/variables.scss" as variable;
+
+.root {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: black;
+
+  & > div {
+    min-width: fit-content;
+    max-width: fit-content;
+  }
+
+  & footer {
+    position: absolute;
+    bottom: 2.5vh;
+    color: rgba(255, 255, 255, 0.548);
+    font-size: 12px;
+
+    & a {
+      color: rgba(255, 255, 255, 0.548);
+      text-decoration: none;
+    }
+  }
+
+  & button {
+    width: fit-content;
+    padding: 0;
+    color: variable.$color-primary;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  & > div:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.uploader {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  & > div:nth-of-type(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  & > div:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    & > button:nth-last-child(1) {
+      opacity: 0.5;
+    }
+  }
+}
+
+.preview {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  & img {
+    max-width: 180px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  & button {
+    opacity: 0.7;
+    font-size: 12px;
+  }
+}

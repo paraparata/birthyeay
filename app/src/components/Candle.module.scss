@@ -1,0 +1,82 @@
+$width: 25px;
+
+.root {
+  position: relative;
+}
+
+.flame {
+  width: $width;
+  height: calc($width + 4px);
+  background: radial-gradient(
+    white,
+    rgba(255, 255, 62, 0.493) 30%,
+    transparent 70%
+  );
+  transform: scale(4);
+  animation: flamition 3ms ease-in infinite;
+
+  &::after {
+    content: " ";
+    width: calc($width / 2);
+    height: calc($width - 2px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: radial-gradient(rgb(255, 208, 0), transparent 30%);
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes flamition {
+    0% {
+      transform: scale(4) rotate(-1deg);
+    }
+    20% {
+      transform: scale(4) rotate(1deg);
+    }
+    40% {
+      transform: scale(4, 4.7) rotate(-1deg);
+    }
+    60% {
+      transform: scale(4, 4.5) rotate(1deg);
+    }
+    80% {
+      transform: scale(4) rotate(-2deg);
+    }
+    100% {
+      transform: scale(4) rotate(1deg);
+    }
+  }
+}
+
+.candle {
+  width: $width;
+  aspect-ratio: 1/6;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: cornsilk;
+  border-radius: 4px;
+
+  & span {
+    width: calc($width + 11px);
+    height: 5px;
+    background: linear-gradient(
+      to right,
+      #be6f7f 10%,
+      crimson 90%,
+      rgb(153, 14, 42)
+    );
+    border-radius: 8px;
+    transform: translateX(-15%) rotateZ(-25deg);
+  }
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, transparent 50%, #050b11c9);
+}
